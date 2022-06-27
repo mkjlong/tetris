@@ -1,6 +1,6 @@
 const columns = 10;
 const rows = 20;
-const speed = 400;
+const speed = 1000;
 var gameover = false;
 const game = document.querySelector("#game")
 var map = {}
@@ -11,7 +11,7 @@ function a(){
         setTimeout(_=>{
             board.movePiece("down")
             a();
-        }, 1000)
+        }, speed)
     }
 }
 
@@ -40,6 +40,12 @@ document.addEventListener("keydown",function(e){
         board.rotatePiece();
     }else if(e.key == "c"){
         board.swapHeldShape();
+    }if(e.key == " "){
+        for(var index in [...Array(20).keys()]){
+            if(!board.movePiece("down")){
+                break;
+            }
+        }
     }
 })
 
