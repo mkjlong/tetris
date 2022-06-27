@@ -32,10 +32,10 @@
 }
 
 [shape = "J"]{
-    background-color: blue;
+    background-color: orange;
 }
 [shape = "L"]{
-    background-color: orange;
+    background-color: blue;
 }
 [shape = "Z"]{
     background-color: red;
@@ -45,4 +45,15 @@
 }
 [shape = "O"]{
     background-color: yellow;
+}
+#helditem{
+    position: absolute;
+    width:10vh;
+    border: 2px solid black;
+    height:10vh;
+    top:20%;
+    left:30%;
+    transform: translate(-50%,-50%);
+    background-repeat: no-repeat;
+    
 }

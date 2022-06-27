@@ -16,6 +16,7 @@ class Board{
                 game.appendChild(element)
             }
         }
+        this.heldShape = null;
         this.placeShape(this.getRandomShape());
     }
     getTile(row, column){
@@ -44,6 +45,7 @@ class Board{
             element.setAttribute("shape", shape)
             element.classList.add("active")
         }
+        this.shape = shape;
         this.getTile(...arr[0]).classList.add("anchor");
         this.tetris();
     }
@@ -165,5 +167,15 @@ class Board{
             element.setAttribute('shape',shape)
             element.classList.add('active')
         }
+    }
+    swapHeldShape(){
+        const shape = this.shape
+        for(var element of document.querySelectorAll(`.game-tile.active`)){
+            element.classList.remove("active")
+            element.removeAttribute("shape")
+        }
+        this.placeShape(this.heldShape??this.getRandomShape())
+        document.querySelector("#helditem").src = `./assets/${shape}.png`
+        this.heldShape = shape
     }
 }

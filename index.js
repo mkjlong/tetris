@@ -27,17 +27,20 @@ document.onkeydown = document.onkeyup = function(e){
     if(map.ArrowRight){
         board.movePiece("right")
     }
-    if(map.ArrowUp){
-        board.rotatePiece()
-    }
-    if(map.z){
-        board.rotatePiece()
-        board.rotatePiece()
-        board.rotatePiece()
-    }
     if(map[' ']){
         board
     }
 }
+document.addEventListener("keydown",function(e){
+    if(e.key == "ArrowUp"){
+        board.rotatePiece();
+    }else if(e.key == "z"){
+        board.rotatePiece();
+        board.rotatePiece();
+        board.rotatePiece();
+    }else if(e.key == "c"){
+        board.swapHeldShape();
+    }
+})
 
 a();
