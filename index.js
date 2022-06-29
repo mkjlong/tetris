@@ -1,6 +1,6 @@
 const columns = 10;
 const rows = 20;
-const speed = 1000;
+var speed = 1000;
 var gameover = false;
 const game = document.querySelector("#game")
 var map = {}
@@ -18,21 +18,9 @@ function a(){
 document.onkeydown = document.onkeyup = function(e){
     e = e||window.event;
     map[e.key]=e.type=='keydown';
-    if(map.ArrowDown){
-        board.movePiece("down")
-    }
-    if(map.ArrowLeft){
-        board.movePiece("left")
-    }
-    if(map.ArrowRight){
-        board.movePiece("right")
-    }
-    if(map[' ']){
-        board
-    }
 }
 document.addEventListener("keydown",function(e){
-    if(e.key == "ArrowUp"){
+    if(map.ArrowUp){
         board.rotatePiece();
     }else if(e.key == "z"){
         board.rotatePiece();
@@ -47,6 +35,25 @@ document.addEventListener("keydown",function(e){
             }
         }
     }
+    if(map.ArrowDown){
+        board.movePiece("down")
+    }
+    if(map.ArrowLeft){
+        board.movePiece("left")
+    }
+    if(map.ArrowRight){
+        board.movePiece("right")
+    }
+    if(map[' ']){
+        board
+    }
 })
 
 a();
+
+
+
+
+$("#slider").on("input change", function(){
+    speed = this.value;
+})

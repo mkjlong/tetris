@@ -2,17 +2,13 @@ const shapes = ["L","J","I","T","J","S","Z","O"]
 
 class Board{
     constructor(){
-        this.tile = []
-        for(const row of [...Array(rows).keys()].map(x=>x+1)){
-            this.tile.push([])
-            for(const column of [...Array(columns).keys()].map(x=>x+1)){
+        this.tile = [...Array(20)].map(x=>[...Array(10)].map(x=>''))
+        for(const row of [...Array(rows).keys()]){
+            for(const column of [...Array(columns).keys()]){
                 const element = document.createElement("div");
-                this.tile[row-1].push(element)
                 element.classList.add("game-tile")
-                element.id = `tile_${row}_${column}`
                 element.setAttribute("row",row);
                 element.setAttribute("column",column);
-                if(row>16)element.setAttribute("shape","L")
                 game.appendChild(element)
             }
         }
@@ -20,7 +16,7 @@ class Board{
         this.placeShape(this.getRandomShape());
     }
     getTile(row, column){
-        return this.tile?.[row-1]?.[column-1]
+        return document.querySelector(`.game-tile[row='${row}'][column='${column}']`)
     }
     getRandomShape(){
         return shapes[Math.floor(Math.random()*shapes.length)]
@@ -105,7 +101,7 @@ class Board{
         const tiles = Array.from(document.querySelectorAll('.game-tile:not(.active)'))
         
         const tetrisRows = []
-        for(var row of [...Array(20).keys()].reverse().map(row=>row+1)){
+        for(var row of [...Array(20).keys()].reverse()){
             for(var _ of [...Array(4).keys()]){//1,1,1,1,2,2,2,2,3,3,3,3 etc...
                 if(Array.from(document.querySelectorAll(`.game-tile[row='${row}']`)).every(element=>element.getAttribute("shape")&&!element.classList.contains("active"))){
                     if(tetrisRows.length>3)continue;
@@ -141,6 +137,7 @@ class Board{
         return [pieceRow-anchorRow, pieceColumn-anchorColumn]
     }
     rotatePiece(){
+        if(board.shape == "O")return false;
         const newSpot = []
         for(var element of document.querySelectorAll(`.game-tile.active:not(.anchor)`)){
             const anchor = document.querySelector(`.anchor`);
