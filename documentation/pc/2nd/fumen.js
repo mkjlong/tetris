@@ -152,6 +152,7 @@ class Fumen{
 	}
 
 	toggleInfoMode(infomode=!this.infomode){
+		if(decoder.decode(this.fumen).length==1)return;
 		this.infomode=infomode;
 
 		for(const fumen of fumens){
@@ -159,7 +160,7 @@ class Fumen{
 		}
 		if(this.infomode){
 			this.element.classList.add("infomode")
-			$("#fumeninfo").show()
+			$("#fumeninfo").addClass("shown")
 			if(decoder.decode(this.fumen).length>1){
 				$("#splitfumens").empty();
 				const splitFumens = splitFumen(this.fumen);
@@ -178,7 +179,7 @@ class Fumen{
 
 		}else{
 			this.element.classList.remove("infomode")
-			$("#fumeninfo").hide()
+			$("#fumeninfo").removeClass("shown")
 		}
 	}
 

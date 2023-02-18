@@ -71,7 +71,7 @@ piece {
 	margin-top: 100px;
 	background-color: rgba(0,0,0,0.2);
 }
-#regular{
+#general{
 	position: relative;
 	display: grid;
 	grid-template-columns: repeat(1,100%);
@@ -105,7 +105,7 @@ piece {
 	gap:20px;
 }
 
-#regular> h2{
+#general> h2{
 	display: flex;
 	font-size: 50;
 	grid-column-start: 1;
@@ -116,7 +116,7 @@ piece {
 	margin:auto;
 	margin-bottom: 20px;
 }
-#regular> div{
+#general> div{
 	font-size: 15;
 	grid-template-columns: repeat(2,50%);
 	display: grid;
@@ -159,13 +159,16 @@ fumen {
 }
 
 
+#fumeninfo.shown{
+	display:flex
+}
 
 #fumeninfo{
 	position: fixed;
 	left:50%;
 	top:50%;
 	transform: translate(-50%,-50%);
-	width:50%;
+	min-width:50%;
 	height: 90%;
 	background-color: #25272C;
 	opacity: 0.975;
@@ -173,21 +176,24 @@ fumen {
 	z-index: 11;
 	border-radius: 25px;
 	border: 5px solid rgb(224, 145, 0);
+	align-items: center;
+	justify-content: center;
+	padding-left:50px;
+	padding-right:50px;
 }
 
 
 #splitfumens{
+	position: relative;
 	border: 2px solid white;
 	display: grid;
 	overflow-y: auto;
 	overflow-x: hidden;
-	position: fixed;
 	gap:10px;
-	left: 50%;
-	transform: translateX(-50%);
-	top:30%;
+	max-width:700px;
 	max-height: 440px;
 	grid-template-columns: repeat(3,220px);
+	top:10%;
 }
 
 #splitfumens::-webkit-scrollbar{
