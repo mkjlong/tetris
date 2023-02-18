@@ -126,6 +126,10 @@ piece {
 	gap:20px;
 }
 
+#general > .setup > .fumen {
+	font-weight: 800;
+	font-size: 25px;
+}
 
 
 

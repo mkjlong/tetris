@@ -60,6 +60,68 @@ qbsearch.on('input', function (e) {
 
 
 
+//queue from url
+
+//mkjlong.github.io/
+
+const url = window.location.search;
+
+const urlParams = new URLSearchParams(url);
+
+if(urlParams.has("queue")){
+    queue = urlParams.get("queue");
+    queue = queue.toUpperCase();
+    if(queue.length==4||queue.length==7){
+        if(/^[TIJLOSZ]+$/.test(queue)){
+            console.log(queue)
+            qbsearch.val(queue)
+            queue = qbsearch.val();
+            (function(){
+                if (queue.length < 4) {
+                    $("#qb").hide();
+                    $("#oqb").hide();
+                    $("#general").hide();
+                }
+                else if (queue.length == 4) {
+                    loop1: for (const [fourpiece, value] of Object.entries(qb)) {
+                        for (const i of fourpiece) {
+                            if (!(queue.includes(i))) {
+                                continue loop1;
+                            }
+                        }
+                        LoadGeneralSetups(value);
+                        LoadQueueBasedSetups(queue, value);
+                    }
+                } else if (queue.length == 7) {
+                    for (const [fourpiece, value] of Object.entries(qb)) {
+                        if (fourpiece.split('').some(i => !queue.split('').splice(0, 4).join('').includes(i))) continue;
+                        for (const char of queue.split('').splice(4).join('')) {
+                            if (queue.split('').splice(4).join('').indexOf(char) != queue.split('').splice(4).join('').lastIndexOf(char)) {
+                                $("#qb").hide();
+                                $("#oqb").hide();
+                                $("#general").hide();
+                                return;
+                            }
+                        }
+                        LoadGeneralSetups(value);
+            
+            
+                        //check for dupes
+            
+            
+                        LoadQueueBasedSetups(queue, value);
+                    }
+                }
+            })();
+            
+        }
+    };
+
+}
+
+
+
+
 
 //loading fumens
 
