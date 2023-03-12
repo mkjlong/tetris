@@ -1294,4 +1294,72 @@ const qb = {
             minimals:"v115@9gA8BtywwhilB8Btwwg0whglE8R4g0whE8R4h0whC8?JeAgWaA053UB0ngHBFbcRASEB6AROaHBQecRAylAAA9gA8B?tzhilB8Bti0glE8R4wwg0E8R4ywC8JeAAPaAz5vKBzngHBF?bcRAS0eHBZOaHBQecRAylAAA9gA8Bti0whilB8BtQ4g0whg?lE8wwR4whE8ywQ4whC8JeAAPaAyFIOB2ngHBFbcRAS0eHBQ?IaHBQecRAylAAA9gA8Bthlg0zhB8Btgli0E8R4RpE8R4glR?pC8JeAAPaAy/HOBxngHBFbcRAS0W9AZRaHBQecRAylAAA9g?A8ywhlzhB8wwR4glh0E8Btglg0E8R4Btg0C8JeAAPaAS4f2?A4ngHBFbcRAS0m2ARLaHBQecRAylAAA9gA8ywR4zhB8Bthl?h0E8Btglg0E8wwR4glg0C8JeAAPZAx83UBzngHBFbcRASU0?2Aymv2AUo78AZAAAA9gA8BtR4g0zhB8Btwwi0E8ywglE8R4?ilC8JeAAPZAx535AxngHBFbcRAS0/KBwmv2AUo78AZAAAA9?gA8hlg0BtzhB8gli0R4E8RpR4E8glRpBtC8JeAAPZAR43UB?1ngHBFbcRAS0nHBymv2AUo78AZAAAA9gA8ywg0AtzhB8hlB?tR4E8glAtR4E8wwgli0C8JeAAPYAZlILBFrnRASo78A4fU9?AvfEEBwnAVB9gA8BtR4g0zhB8R4wwi0E8ywglE8BtilC8Je?AAPYAZVWEBFrnRASo78AYuILBvfEEBwnAVB9gA8BtQ4glg0?zhB8ili0E8R4RpE8BtQ4RpC8JeAAPYAZlf9AFrnRASo78AY?e22AvfEEBwnAVB9gA8BtR4g0zhB8Btwwi0E8xwRpE8R4wwR?pC8JeAAPYASF0RBFrnRASo78A4Zt2AvfEEBwnAVB9gA8zhR?4ilB8RpR4wwglE8BtxwE8RpBtwwC8JeAAPXARl+UBFrnRAS?o78AYhMzAVYt2AFr4AA9gA8BtR4RpilB8Bti0glE8ywg0E8?R4wwRpC8JeAAPXAQFsHBFrnRASo78A4cezAVYt2AFr4AA9g?A8ywi0ilB8BtR4g0glE8BtRpE8wwR4RpC8JeAAPXAQ1x2AF?rnRASo78A4cMzAVYt2AFr4AA9gA8Bthlg0zhB8Btgli0E8w?wglRpE8ywRpC8JeAAPXAQVtRBFrnRASo78AYbVzAVYt2AFr?4AA9gA8ywi0ilB8wwRpQ4g0glE8RpR4E8zhQ4C8JeAAPXAQ?1oRBFrnRASo78A4ZVzAVYt2AFr4AA9gA8ywRpzhB8BtRph0?E8Btglg0E8wwilg0C8JeAAPWAQlW9AFrnRASo78AYRaHBQe?cRAylAAA"
         },
     },
+    "TJZI": {
+        "Tub": {
+            type: "general",
+            saves: {
+                O: "97.98%",
+                I: "1.15%",
+                Z: "0.87%"
+            },
+            fumen: "v115@GhwwDeg0CexwDei0BtwwDezhBtJeAgH",
+            minimals: "v115@9gilwhywR4A8glAtg0whA8wwR4B8Btg0whF8Ath0wh?F8JeAgWaAUBwKB3ngHBFbcRASExABVLaHBQecRAylAAA9gz?hywR4A8BthlA8wwR4B8g0BtglF8i0glF8JeAAPaA05HOB1n?gHBFbcRASEB6AQOaHBQecRAylAAA9gzhBtywA8h0R4A8Btw?wB8g0R4glF8g0ilF8JeAAA9gwhi0BtywA8whglQ4g0A8Btw?wB8whglR4F8whhlQ4F8JeAAPaAU4f2AwngHBFbcRASEp2AR?RaHBQecRAylAAA9gwhQ4hlBtywA8whR4glA8BtwwB8whg0Q?4glF8whi0F8JeAAPaAz8nABzngHBFbcRAS02KBYIaHBQecR?AylAAA9gwhh0AtywR4A8whg0BtA8wwR4B8whg0AtglF8whi?lF8JeAAA9gBthlywR4A8g0BtglA8wwR4B8i0glF8zhF8JeA?APaASBwKB3ngHBFbcRAS0uABUOaHBQecRAylAAA9gh0R4Bt?ywA8g0R4glA8BtwwB8g0ilF8zhF8JeAAA9gwhi0BtywA8wh?ilA8BtwwB8whglR4F8whR4g0F8JeAAPZAxFg2A1ngHBFbcR?AS0ILBwmv2AUo78AZAAAA9gwhg0R4BtywA8whi0A8BtwwB8?whR4glF8whilF8JeAAA9gwhilywR4A8whi0A8wwR4B8whBt?g0F8whglBtF8JeAAA9gwhBtglywR4A8whilA8wwR4B8whg0?BtF8whi0F8JeAAA9gilg0ywR4A8glBtg0A8wwR4B8RpBtF8?Rph0F8JeAAPXAQ1ZOBFrnRASo78A4cVzAVYt2AFr4AA9gzh?ywR4A8h0hlA8wwR4B8g0RpglF8g0RpglF8JeAAPXAQVtRBF?rnRASo78AYbVzAVYt2AFr4AA9gwhilywR4A8whglRpA8wwR?4B8whg0RpF8whi0F8JeAAPXAQVt2AFrnRASo78AYbMzAVYt?2AFr4AA9gh0hlywR4A8g0RpglA8wwR4B8g0RpglF8zhF8Je?AAPXAQFb9AFrnRASo78A45ZzAVYt2AFr4AA9gRpR4BtywA8?RphlA8BtwwB8g0R4glF8i0glF8JeAAPXAQ1IEBFrnRASo78?A45QzAVYt2AFr4AA9gBtRpywR4A8h0RpA8wwR4B8g0BtglF?8g0ilF8JeAAA",
+            notes: "This setup is unbuildable if {T} and {J} is first. Do another setup if you can't build this one. The first save {I} setup requires a 180 spin. Without 180, the solve percentage drops down to 99.76%"
+        }
+    },
+    "TLSI": {
+        "Tub": {
+            type: "general",
+            saves: {
+                O: "97.98%",
+                I: "1.15%",
+                S: "0.87%"
+            },
+            fumen: "v115@9gwwIexwCeglDewwR4ilDeR4zhNeAgH",
+            minimals: "v115@9gA8Btywwhi0B8BtwwA8whglQ4g0F8whglR4F8whhl?Q4JeAgWaAUBwKB3ngHBFbcRASExABVLaHBQecRAylAAA9gA?8BtywzhB8BtwwA8h0R4F8g0R4glF8g0ilJeAAPaA05HOB1n?gHBFbcRASEB6AQOaHBQecRAylAAA9gA8ywR4zhB8wwR4A8B?thlF8g0BtglF8i0glJeAAA9gA8ywR4ilwhB8wwR4A8glAtg?0whF8Btg0whF8Ath0whJeAAPaAU4f2AwngHBFbcRASEp2AR?RaHBQecRAylAAA9gA8ywR4h0AtwhB8wwR4A8g0BtwhF8g0A?tglwhF8ilwhJeAAPaAz8nABzngHBFbcRAS02KBYIaHBQecR?AylAAA9gA8BtywQ4hlwhB8BtwwA8R4glwhF8g0Q4glwhF8i?0whJeAAA9gA8Btywh0R4B8BtwwA8g0R4glF8g0ilF8zhJeA?APaASBwKB3ngHBFbcRAS0uABUOaHBQecRAylAAA9gA8ywR4?BthlB8wwR4A8g0BtglF8i0glF8zhJeAAA9gA8ywR4ilwhB8?wwR4A8i0whF8Btg0whF8glBtwhJeAAPZAxFg2A1ngHBFbcR?AS0ILBwmv2AUo78AZAAAA9gA8ywR4BtglwhB8wwR4A8ilwh?F8g0BtwhF8i0whJeAAA9gA8Btywi0whB8BtwwA8ilwhF8gl?R4whF8R4g0whJeAAA9gA8Btywg0R4whB8BtwwA8i0whF8R4?glwhF8ilwhJeAAA9gA8Btywgli0B8BtwwA8glR4g0F8R4Rp?F8hlRpJeAAPXAQ1ZOBFrnRASo78A4cVzAVYt2AFr4AA9gA8?BtywzhB8BtwwA8h0hlF8g0RpglF8g0RpglJeAAPXAQVtRBF?rnRASo78AYbVzAVYt2AFr4AA9gA8Btywi0whB8BtwwA8Rpg?0whF8RpglwhF8ilwhJeAAPXAQVt2AFrnRASo78AYbMzAVYt?2AFr4AA9gA8Btywh0hlB8BtwwA8g0RpglF8g0RpglF8zhJe?AAPXAQFb9AFrnRASo78A45ZzAVYt2AFr4AA9gA8ywR4BtRp?B8wwR4A8h0RpF8g0BtglF8g0ilJeAAPXAQ1IEBFrnRASo78?A45QzAVYt2AFr4AA9gA8BtywRpR4B8BtwwA8RphlF8g0R4g?lF8i0glJeAAA",
+            notes: "This setup is unbuildable if {T} and {L} is first. Do another setup if you can't build this one. The first save {I} setup requires a 180 spin. Without 180, the solve percentage drops down to 99.76%"
+        }
+    },
+    "TILZ": {
+        "Tub": {
+            type: "general",
+            saves: {
+                O: "97.98%",
+                I: "1.15%",
+                S: "0.87%"
+            },
+            fumen:"v115@GhwhDeglCewwwhDeglBtxwwhDehlBtwwwhJeAgH",
+            minimals: "v115@9gilwhywR4A8glAtg0whA8wwR4B8Btg0whF8Ath0wh?F8JeAgWaAUBwKB3ngHBFbcRASExABVLaHBQecRAylAAA9gz?hywR4A8BthlA8wwR4B8g0BtglF8i0glF8JeAAPaA05HOB1n?gHBFbcRASEB6AQOaHBQecRAylAAA9gzhBtywA8h0R4A8Btw?wB8g0R4glF8g0ilF8JeAAA9gwhi0BtywA8whglQ4g0A8Btw?wB8whglR4F8whhlQ4F8JeAAPaAU4f2AwngHBFbcRASEp2AR?RaHBQecRAylAAA9gwhQ4hlBtywA8whR4glA8BtwwB8whg0Q?4glF8whi0F8JeAAPaAz8nABzngHBFbcRAS02KBYIaHBQecR?AylAAA9gwhh0AtywR4A8whg0BtA8wwR4B8whg0AtglF8whi?lF8JeAAA9gBthlywR4A8g0BtglA8wwR4B8i0glF8zhF8JeA?APaASBwKB3ngHBFbcRAS0uABUOaHBQecRAylAAA9gh0R4Bt?ywA8g0R4glA8BtwwB8g0ilF8zhF8JeAAA9gwhi0BtywA8wh?ilA8BtwwB8whglR4F8whR4g0F8JeAAPZAxFg2A1ngHBFbcR?AS0ILBwmv2AUo78AZAAAA9gwhg0R4BtywA8whi0A8BtwwB8?whR4glF8whilF8JeAAA9gwhilywR4A8whi0A8wwR4B8whBt?g0F8whglBtF8JeAAA9gwhBtglywR4A8whilA8wwR4B8whg0?BtF8whi0F8JeAAA9gilg0ywR4A8glBtg0A8wwR4B8RpBtF8?Rph0F8JeAAPXAQ1ZOBFrnRASo78A4cVzAVYt2AFr4AA9gzh?ywR4A8h0hlA8wwR4B8g0RpglF8g0RpglF8JeAAPXAQVtRBF?rnRASo78AYbVzAVYt2AFr4AA9gwhilywR4A8whglRpA8wwR?4B8whg0RpF8whi0F8JeAAPXAQVt2AFrnRASo78AYbMzAVYt?2AFr4AA9gh0hlywR4A8g0RpglA8wwR4B8g0RpglF8zhF8Je?AAPXAQFb9AFrnRASo78A45ZzAVYt2AFr4AA9gRpR4BtywA8?RphlA8BtwwB8g0R4glF8i0glF8JeAAPXAQ1IEBFrnRASo78?A45QzAVYt2AFr4AA9gBtRpywR4A8h0RpA8wwR4B8g0BtglF?8g0ilF8JeAAA",
+            
+            notes: "Without 180, the solve percentage drops down to 99.76%"
+        }
+    },
+    "TIJS": {
+        "Tub": {
+            type: "general",
+            saves: {
+                O: "97.98%",
+                I: "1.15%",
+                Z: "0.87%"
+            },
+            fumen:"v115@9gwhIewhwwCeg0DewhxwR4g0DewhwwR4h0NeAgH",
+            minimals: "v115@9gA8Btywwhi0B8BtwwA8whglQ4g0F8whglR4F8whhl?Q4JeAgWaAUBwKB3ngHBFbcRASExABVLaHBQecRAylAAA9gA?8BtywzhB8BtwwA8h0R4F8g0R4glF8g0ilJeAAPaA05HOB1n?gHBFbcRASEB6AQOaHBQecRAylAAA9gA8ywR4zhB8wwR4A8B?thlF8g0BtglF8i0glJeAAA9gA8ywR4ilwhB8wwR4A8glAtg?0whF8Btg0whF8Ath0whJeAAPaAU4f2AwngHBFbcRASEp2AR?RaHBQecRAylAAA9gA8ywR4h0AtwhB8wwR4A8g0BtwhF8g0A?tglwhF8ilwhJeAAPaAz8nABzngHBFbcRAS02KBYIaHBQecR?AylAAA9gA8BtywQ4hlwhB8BtwwA8R4glwhF8g0Q4glwhF8i?0whJeAAA9gA8Btywh0R4B8BtwwA8g0R4glF8g0ilF8zhJeA?APaASBwKB3ngHBFbcRAS0uABUOaHBQecRAylAAA9gA8ywR4?BthlB8wwR4A8g0BtglF8i0glF8zhJeAAA9gA8ywR4ilwhB8?wwR4A8i0whF8Btg0whF8glBtwhJeAAPZAxFg2A1ngHBFbcR?AS0ILBwmv2AUo78AZAAAA9gA8ywR4BtglwhB8wwR4A8ilwh?F8g0BtwhF8i0whJeAAA9gA8Btywi0whB8BtwwA8ilwhF8gl?R4whF8R4g0whJeAAA9gA8Btywg0R4whB8BtwwA8i0whF8R4?glwhF8ilwhJeAAA9gA8Btywgli0B8BtwwA8glR4g0F8R4Rp?F8hlRpJeAAPXAQ1ZOBFrnRASo78A4cVzAVYt2AFr4AA9gA8?BtywzhB8BtwwA8h0hlF8g0RpglF8g0RpglJeAAPXAQVtRBF?rnRASo78AYbVzAVYt2AFr4AA9gA8Btywi0whB8BtwwA8Rpg?0whF8RpglwhF8ilwhJeAAPXAQVt2AFrnRASo78AYbMzAVYt?2AFr4AA9gA8Btywh0hlB8BtwwA8g0RpglF8g0RpglF8zhJe?AAPXAQFb9AFrnRASo78A45ZzAVYt2AFr4AA9gA8ywR4BtRp?B8wwR4A8h0RpF8g0BtglF8g0ilJeAAPXAQ1IEBFrnRASo78?A45QzAVYt2AFr4AA9gA8BtywRpR4B8BtwwA8RphlF8g0R4g?lF8i0glJeAAA",
+            
+            notes: "Without 180, the solve percentage drops down to 99.76%"
+        }
+    },
+    "TILJ": {
+        "Tub": {
+            type: "general",
+            saves: {
+                O: "97.98%",
+                I: "1.15%",
+                S: "0.87%"
+            },
+            fumen:"v115@GhwhDeglCeg0whDeglywg0whDehlwwh0whJeAgH",
+            minimals: "v115@9gilwhywR4A8glAtg0whA8wwR4B8Btg0whF8Ath0wh?F8JeAgWaAUBwKB3ngHBFbcRASExABVLaHBQecRAylAAA9gz?hywR4A8BthlA8wwR4B8g0BtglF8i0glF8JeAAPaA05HOB1n?gHBFbcRASEB6AQOaHBQecRAylAAA9gzhBtywA8h0R4A8Btw?wB8g0R4glF8g0ilF8JeAAA9gwhi0BtywA8whglQ4g0A8Btw?wB8whglR4F8whhlQ4F8JeAAPaAU4f2AwngHBFbcRASEp2AR?RaHBQecRAylAAA9gwhQ4hlBtywA8whR4glA8BtwwB8whg0Q?4glF8whi0F8JeAAPaAz8nABzngHBFbcRAS02KBYIaHBQecR?AylAAA9gwhh0AtywR4A8whg0BtA8wwR4B8whg0AtglF8whi?lF8JeAAA9gBthlywR4A8g0BtglA8wwR4B8i0glF8zhF8JeA?APaASBwKB3ngHBFbcRAS0uABUOaHBQecRAylAAA9gh0R4Bt?ywA8g0R4glA8BtwwB8g0ilF8zhF8JeAAA9gwhi0BtywA8wh?ilA8BtwwB8whglR4F8whR4g0F8JeAAPZAxFg2A1ngHBFbcR?AS0ILBwmv2AUo78AZAAAA9gwhg0R4BtywA8whi0A8BtwwB8?whR4glF8whilF8JeAAA9gwhilywR4A8whi0A8wwR4B8whBt?g0F8whglBtF8JeAAA9gwhBtglywR4A8whilA8wwR4B8whg0?BtF8whi0F8JeAAA9gilg0ywR4A8glBtg0A8wwR4B8RpBtF8?Rph0F8JeAAPXAQ1ZOBFrnRASo78A4cVzAVYt2AFr4AA9gzh?ywR4A8h0hlA8wwR4B8g0RpglF8g0RpglF8JeAAPXAQVtRBF?rnRASo78AYbVzAVYt2AFr4AA9gwhilywR4A8whglRpA8wwR?4B8whg0RpF8whi0F8JeAAPXAQVt2AFrnRASo78AYbMzAVYt?2AFr4AA9gh0hlywR4A8g0RpglA8wwR4B8g0RpglF8zhF8Je?AAPXAQFb9AFrnRASo78A45ZzAVYt2AFr4AA9gRpR4BtywA8?RphlA8BtwwB8g0R4glF8i0glF8JeAAPXAQ1IEBFrnRASo78?A45QzAVYt2AFr4AA9gBtRpywR4A8h0RpA8wwR4B8g0BtglF?8g0ilF8JeAAA",
+            
+            notes: "Without 180, the solve percentage drops down to 99.76%"
+        }
+    }
 }
