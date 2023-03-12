@@ -201,7 +201,7 @@ async function LoadQueueBasedSetups(queue, value) {
 
         if (setup.queues4p) {
             if (queue.length == 4) {
-                if (!setup.queues4p(queue)) continue;
+                //if (!setup.queues4p(queue)) continue;
 
 
             } else if (queue.length == 7) {

@@ -947,7 +947,7 @@ const qb = {
             },
             fumen: "v115@JhBtEeglBewwBtR4ilAeywR4zhJeAgH",
             minimals: "v115@9gwhh0BtywR4whg0B8BtwwR4A8whg0H8whI8JeAgH",
-            notes: "doesn't work if first two {s} are {O} and {S}, where you can do the {L}{O} or {O}{S} qb instead",
+            notes: "doesn't work if first two pieces are {O} and {S}, where you can do the {L}{O} or {O}{S} qb instead",
             queues: (queue) => {
                 if (queue == "OSL" || queue == "SOL") return false;
                 return see(queue, "L")
@@ -960,7 +960,7 @@ const qb = {
             },
             fumen: "v115@Hhg0EeR4Bei0BtR4wwBezhBtywKeAgH",
             minimals: "v115@9gBtywR4hlwhA8BtwwR4B8glwhH8glwhI8whJeAgH",
-            notes: "doesn't work if first two {s} are {O} and {Z}, where you can do the {J}{O} or {O}{Z} qb instead",
+            notes: "doesn't work if first two pieces are {O} and {Z}, where you can do the {J}{O} or {O}{Z} qb instead",
             queues: (queue) => {
                 if (queue == "OZJ" || queue == "ZOJ") return false;
                 return see(queue, "J")
@@ -973,7 +973,7 @@ const qb = {
             },
             fumen: "v115@9gwhIewhCeBtDewhAeR4wwBtwwBewhR41wKeAgH",
             minimals: "v115@9gA8h0R4BthlwhA8g0R4B8BtglwhA8g0F8glwhI8wh?JeAgH",
-            notes: "doesn't work if first two {s} are {L} and {O}, where you can do the {L}{O} qb, or mirror the setup",
+            notes: "doesn't work if first two pieces are {L} and {O}, where you can do the {L}{O} qb, or mirror the setup",
             queues: (queue) => {
                 return see(queue, "T")
             }
@@ -989,6 +989,266 @@ const qb = {
                 return see(queue, "ISZ")
             }
         }
+    },
+    "TSZO": {
+        "3p jaws":{
+            type:"general",
+            saves: {
+                T:"35.71%",
+                O:"61.35%",
+                I:"2.36%",
+                J:"0.58%"
+            },
+            fumen:"v115@KhAtFeRpBtR4DeRpAtR4OeAgH",
+            minimals:"v115@9gg0zhR4wwhli0A8R4ywglF8wwBtglE8ywBtJeAgH9?gg0zhwwBthli0A8ywBtglF8R4wwglE8R4ywJeAAA9gRpilR?4i0RpglA8R4zhF8wwBtg0E8ywBtJeAAA9gg0zhywhli0A8B?twwR4glF8R4wwglE8BtywJeAAA9gg0zhwwBthli0A8ywBtg?lF8xwR4E8xwR4glJeAAA9gg0zhR4ywi0A8R4BthlF8wwBtg?lE8zwglJeAAA9gRpilwwR4AtwhRpglA8ywBtwhF8i0whE8R?4Atg0whJeAAA9gg0zhzwAti0A8zwBtF8R4AtglE8R4ilJeA?AA9gRpilwwBtg0whRpglA8ywBtwhF8R4g0whE8R4h0whJeA?AA9gg0zhwwQ4Btwwi0A8xwR4xwF8ilwwE8wwglQ4BtJeAAA?9gRpilwwBtR4RpglA8ywR4g0F8wwBtg0E8ywh0JeAAA9gRp?ilR4i0RpglA8R4ywAtF8xwBtE8ywAtg0JeAAA9gRpilwwR4?wwwhRpglA80wwhF8BtwwwhE8R4BtwhJeAAA9gRpilwwBtww?whRpglA80wwhF8R4wwwhE8R4BtwhJeAAA",
+            notes:"100% save {T}/{O} if you cant use any of the qbs listed (at least i think so)"
+        },
+        "See {J}{Z}": {
+            type: "qb",
+            saves: {
+                "T": 100
+            },
+            fumen: "v115@Jhh0AtBeBtAeRpg0BtR4wwBtRpg0AtR4ywKeAgH",
+            minimals: "v115@HhRpzhR4hlRpC8R4B8glI8glJeAgH",
+            queues: (queue) => {
+                return see(queue, "JZ")
+            },
+        },
+        "See {L}{S}": {
+            type: "qb",
+            saves: {
+                "T": 100
+            },
+            fumen: "v115@IhR4BeQ4hlBeR4wwBtR4glRpAeywBtQ4glRpJeAgH",
+            minimals: "v115@Hhh0BtzhRpg0B8BtC8Rpg0I8JeAgH",
+            queues: (queue) => {
+                return see(queue, "LS")
+            },
+        },
+        "See {J}{S}, {J} < {S}": {
+            type: "qb",
+            saves: {
+                "T": 100
+            },
+            fumen: "v115@IhR4BeQ4hlBeR4wwBtR4glRpAeywBtQ4glRpJeAgH",
+            minimals: "v115@Hhh0BtzhRpg0B8BtC8Rpg0I8JeAgH",
+            queues: (queue) => {
+                if(see(queue,"JS")){
+                    if(queue.indexOf("S")==2){
+                        return !(see(queue, "I") || see(queue, "T") || see(queue, "J"))
+                    }else{
+                        return true;
+                    }
+                }else{
+                    return false
+                }
+            },
+        },
+        "See {L}{Z}, {L} < {Z}": {
+            type: "qb",
+            saves: {
+                "T": 100
+            },
+            fumen: "v115@IhR4BeQ4hlBeR4wwBtR4glRpAeywBtQ4glRpJeAgH",
+            minimals: "v115@Hhh0BtzhRpg0B8BtC8Rpg0I8JeAgH",
+            queues: (queue) => {
+                if(see(queue,"LZ")){
+                    if(queue.indexOf("S")==2){
+                        return !(see(queue, "I") || see(queue, "T") || see(queue, "J"))
+                    }else{
+                        return true;
+                    }
+                }else{
+                    return false
+                }
+            },
+        },
+        "See {J}{T}": {
+            type: "qb",
+            saves: {
+                "O": 100
+            },
+            fumen: "v115@Hhi0BeBtCeRpg0R4wwBtwwAeRpR41wJeAgH",
+            minimals: "v115@HhzhR4BthlC8R4B8BtglI8glJeAgH",
+            queues: (queue) => {
+                return see(queue, "JT")
+            },
+        },
+        "See {L}{T}": {
+            type: "qb",
+            saves: {
+                "O": 100
+            },
+            fumen: "v115@KhR4BeilAewwR4wwBtglRp1wBtRpJeAgH",
+            minimals: "v115@Hhh0R4Btzhg0R4B8BtC8g0I8JeAgH",
+            queues: (queue) => {
+                return see(queue, "JT")
+            },
+        },
+        "See {T}{Z}": {
+            type: "qb",
+            saves: {
+                "O": 100
+            },
+            fumen: "v115@EhwwEeAtBeywAeRpBtR4wwBtAeRpAtR4ywBtJeAgH",
+            minimals: "v115@Hhg0zhR4A8hli0A8R4C8glI8glJeAgH",
+            queues: (queue) => {
+                return see(queue, "TZ")
+            },
+        },
+        "See {T}{S}": {
+            type: "qb",
+            saves: {
+                "O": 100
+            },
+            fumen: "v115@/gwwHeywBeQ4DeR4wwBtR4RpR4ywBtQ4RpJeAgH",
+            minimals: "v115@Hhh0A8Btzhglg0C8BtA8ilg0I8JeAgH",
+            queues: (queue) => {
+                return see(queue, "TS")
+            },
+        },
+        
+    },
+    "TILJ": {
+        "Tub": {
+            type: "general",
+            saves: {
+                O: "97.98%",
+                I: "1.15%",
+                S: "0.87%"
+            },
+            fumen:"v115@GhwhDeglCeg0whDeglywg0whDehlwwh0whJeAgH",
+            minimals: "v115@9gilwhywR4A8glAtg0whA8wwR4B8Btg0whF8Ath0wh?F8JeAgWaAUBwKB3ngHBFbcRASExABVLaHBQecRAylAAA9gz?hywR4A8BthlA8wwR4B8g0BtglF8i0glF8JeAAPaA05HOB1n?gHBFbcRASEB6AQOaHBQecRAylAAA9gzhBtywA8h0R4A8Btw?wB8g0R4glF8g0ilF8JeAAA9gwhi0BtywA8whglQ4g0A8Btw?wB8whglR4F8whhlQ4F8JeAAPaAU4f2AwngHBFbcRASEp2AR?RaHBQecRAylAAA9gwhQ4hlBtywA8whR4glA8BtwwB8whg0Q?4glF8whi0F8JeAAPaAz8nABzngHBFbcRAS02KBYIaHBQecR?AylAAA9gwhh0AtywR4A8whg0BtA8wwR4B8whg0AtglF8whi?lF8JeAAA9gBthlywR4A8g0BtglA8wwR4B8i0glF8zhF8JeA?APaASBwKB3ngHBFbcRAS0uABUOaHBQecRAylAAA9gh0R4Bt?ywA8g0R4glA8BtwwB8g0ilF8zhF8JeAAA9gwhi0BtywA8wh?ilA8BtwwB8whglR4F8whR4g0F8JeAAPZAxFg2A1ngHBFbcR?AS0ILBwmv2AUo78AZAAAA9gwhg0R4BtywA8whi0A8BtwwB8?whR4glF8whilF8JeAAA9gwhilywR4A8whi0A8wwR4B8whBt?g0F8whglBtF8JeAAA9gwhBtglywR4A8whilA8wwR4B8whg0?BtF8whi0F8JeAAA9gilg0ywR4A8glBtg0A8wwR4B8RpBtF8?Rph0F8JeAAPXAQ1ZOBFrnRASo78A4cVzAVYt2AFr4AA9gzh?ywR4A8h0hlA8wwR4B8g0RpglF8g0RpglF8JeAAPXAQVtRBF?rnRASo78AYbVzAVYt2AFr4AA9gwhilywR4A8whglRpA8wwR?4B8whg0RpF8whi0F8JeAAPXAQVt2AFrnRASo78AYbMzAVYt?2AFr4AA9gh0hlywR4A8g0RpglA8wwR4B8g0RpglF8zhF8Je?AAPXAQFb9AFrnRASo78A45ZzAVYt2AFr4AA9gRpR4BtywA8?RphlA8BtwwB8g0R4glF8i0glF8JeAAPXAQ1IEBFrnRASo78?A45QzAVYt2AFr4AA9gBtRpywR4A8h0RpA8wwR4B8g0BtglF?8g0ilF8JeAAA",
+            
+            notes: "Without 180, the solve percentage drops down to 99.76%"
+        },
+        "3L": {
+            type: "general",
+            saves: {
+                T: "80.67%",
+                O: "19.33%",
+            },
+            fumen:"v115@Rhg0Hegli0zhilJeAgH",
+            minimals: "v115@9gRpg0ilzhRpg0BtywR4A8h0glBtwwR4K8JeAgH9gg?0ilzhRpi0R4wwBtRpA8glR4ywBtK8JeAAA9gRpzhi0glRpR?4wwBtilA8R4ywBtg0K8JeAAA9gRpi0glzhRpR4g0BtywA8R?4ilBtwwK8JeAAA9gzhg0ilRpywR4glBtRpA8wwR4i0BtK8J?eAAA9gg0ilR4BtRpi0R4ywRpA8glzhwwBtK8JeAAA9gilg0?R4zhglRpR4BtywA8Rpi0BtwwK8JeAAA9gRpR4Bti0glRpyw?BtilA8R4wwzhg0K8JeAAA9gg0ilRpzhi0R4BtywA8glR4Rp?BtwwK8JeAAA9gQ4i0RpzhR4ilBtywA8Q4glg0RpBtwwK8Je?AAA9gzhRpilAtywR4i0BtA8wwR4Rpglg0AtK8JeAAA9gzhR?pi0glywR4BtilA8wwR4RpBtg0K8JeAAA9gzhilg0R4BtywR?pi0A8BtwwglRpR4K8JeAAA9gBtgli0zhilRpywR4A8BtRpg?0wwR4K8JeAAA9gi0zhR4AtywRpilBtA8wwg0RpglR4AtK8J?eAAA9gQ4BtzhilR4i0RpywA8Q4Btg0RpglwwK8JeAAA9gil?R4Atzhglg0R4BtzwA8i0AtzwK8JeAAA9gzhQ4Bti0zwR4Bt?glg0A8zwQ4ilK8JeAAA9gRpg0glywR4AtRpi0wwR4BtA8il?zhAtK8JeAAA9gQ4Btywg0glRpR4BtwwilRpA8Q4zhi0K8Je?AAA9gywR4Atg0RpglzhBtg0ilA8wwR4Ath0RpK8JeAAA9gg?0RpglQ4Btywi0glR4zhA8RphlQ4BtwwK8JeAAA9gBtywR4g?lRpzhi0glRpA8BtwwR4g0hlK8JeAAA9gBtywR4Rpglzhi0i?lA8BtwwR4g0RpK8JeAAA",
+            notes:"can be extremely hard to solve"
+        },
+        "See {S}{Z}, {S} > {Z}": {
+            type: "qb",
+            saves: {
+                "T": 100
+            },
+            fumen: "v115@EhRpg0AeBtQ4CeRpg0ywR4ilh0AewwBtQ4glzhJeAg?H",
+            minimals: "v115@Hhh0zhglC8g0C8ilC8g0I8JeAgH",
+            queues: (queue) => {
+                if(see(queue,"SZ")){
+                    if(queue.indexOf("Z")==2){
+                        return !(see("I")||see("T")||see("J"))
+                    }else{
+                        return true
+                    }
+                }else{
+                    return false
+                }
+            },
+        },
+        "See {Z}{S}, {Z} > {S}": {
+            type: "qb",
+            saves: {
+                "T": 100
+            },
+            fumen: "v115@9gglRpGeglRpCeAtR4Aehli0Btywzhg0AtR4wwKeAg?H",
+            minimals: "v115@HhC8g0zhhlC8i0C8glI8glJeAgH",
+            queues: (queue) => {
+                if(see(queue,"ZS")){
+                    if(queue.indexOf("S")==2){
+                        return !(see("I")||see("T")||see("L"))
+                    }else{
+                        return true
+                    }
+                }else{
+                    return false
+                }
+            },
+        },
+        "See {O}{S}": {
+            type: "qb",
+            saves: {
+                "T": 100
+            },
+            fumen: "v115@9gQ4IeR4FeRpg0Q4ywilRpi0wwAeglzhJeAgH",
+            minimals: "v115@HhA8Bthlg0zhB8Btgli0F8glE8JeAgH",
+            queues: (queue) => {
+                return see(queue, "OS")
+            },
+        },
+        "See {O}{Z}": {
+            type: "qb",
+            saves: {
+                "T": 100
+            },
+            fumen: "v115@GhAtRpFeBtRpi0ywAtglzhg0AewwilJeAgH",
+            minimals: "v115@Hhzhglh0R4C8ilg0R4G8g0D8JeAgH",
+            queues: (queue) => {
+                return see(queue, "OZ")
+            },
+        },
+        "See {T}{Z}": {
+            type: "qb",
+            saves: {
+                "O": 100
+            },
+            fumen: "v115@IhAtBewwCehlBtzwi0glAtywzhg0glJeAgH",
+            minimals: "v115@RhilR4g0zhglA8R4A8i0B8JeAgH",
+            queues: (queue) => {
+                return see(queue, "TZ")
+            },
+        },
+        "See {T}{S}": {
+            type: "qb",
+            saves: {
+                "O": 100
+            },
+            fumen: "v115@Hhh0CewwBeQ4Aeg0ilzwR4g0glzhywQ4JeAgH",
+            minimals: "v115@RhzhglBti0B8ilA8BtA8g0JeAgH",
+            queues: (queue) => {
+                return see(queue, "TZ")
+            },
+        },
+        "See {I}{T}": {
+            type: "qb",
+            saves: {
+                "O": 100
+            },
+            fumen: "v115@9gwhHexhglFeg0xhgl1wg0xhhlwwBewwh0whJeAgH",
+            minimals: "v115@HhA8Bthlh0R4C8Btglg0R4F8glg0D8JeAgH",
+            queues: (queue) => {
+                return see(queue, "IT")
+            },
+        },
+        "See {L}": {
+            type: "qb",
+            saves: {
+                "O": 100
+            },
+            fumen: "v115@IhglCeg0CeglAeglywg0AeilAehlwwh0zhJeAgH",
+            minimals: "v115@9gwhBtywh0R4whA8BtwwA8g0R4A8whE8g0C8whI8Je?AgH",
+            notes:"Cannot build this setup if {O}{Z} is first. Do the {O}{Z} qb instead.",
+            queues: (queue) => {
+                return see(queue, "L") && !(queue.indexOf("L")==2 && see("OZ"))
+            },
+        },
+        "See {J}": {
+            type: "qb",
+            saves: {
+                "O": 100
+            },
+            fumen: "v115@Hhg0CeglCeg0Aei0Aeglywg0Aezhhlwwh0KeAgH",
+            minimals: "v115@9gBthlywR4whA8BtglA8wwR4A8whC8glE8whI8whJe?AgH",
+            notes:"Cannot build this setup if {O}{S} is first. Do the {O}{S} qb instead.",
+            queues: (queue) => {
+                return see(queue, "J") && !(queue.indexOf("J")==2 && see("OS"))
+            },
+        },
     },
     "TILO": {
         "See {S}{O}": {
@@ -1348,18 +1608,4 @@ const qb = {
             notes: "Without 180, the solve percentage drops down to 99.76%"
         }
     },
-    "TILJ": {
-        "Tub": {
-            type: "general",
-            saves: {
-                O: "97.98%",
-                I: "1.15%",
-                S: "0.87%"
-            },
-            fumen:"v115@GhwhDeglCeg0whDeglywg0whDehlwwh0whJeAgH",
-            minimals: "v115@9gilwhywR4A8glAtg0whA8wwR4B8Btg0whF8Ath0wh?F8JeAgWaAUBwKB3ngHBFbcRASExABVLaHBQecRAylAAA9gz?hywR4A8BthlA8wwR4B8g0BtglF8i0glF8JeAAPaA05HOB1n?gHBFbcRASEB6AQOaHBQecRAylAAA9gzhBtywA8h0R4A8Btw?wB8g0R4glF8g0ilF8JeAAA9gwhi0BtywA8whglQ4g0A8Btw?wB8whglR4F8whhlQ4F8JeAAPaAU4f2AwngHBFbcRASEp2AR?RaHBQecRAylAAA9gwhQ4hlBtywA8whR4glA8BtwwB8whg0Q?4glF8whi0F8JeAAPaAz8nABzngHBFbcRAS02KBYIaHBQecR?AylAAA9gwhh0AtywR4A8whg0BtA8wwR4B8whg0AtglF8whi?lF8JeAAA9gBthlywR4A8g0BtglA8wwR4B8i0glF8zhF8JeA?APaASBwKB3ngHBFbcRAS0uABUOaHBQecRAylAAA9gh0R4Bt?ywA8g0R4glA8BtwwB8g0ilF8zhF8JeAAA9gwhi0BtywA8wh?ilA8BtwwB8whglR4F8whR4g0F8JeAAPZAxFg2A1ngHBFbcR?AS0ILBwmv2AUo78AZAAAA9gwhg0R4BtywA8whi0A8BtwwB8?whR4glF8whilF8JeAAA9gwhilywR4A8whi0A8wwR4B8whBt?g0F8whglBtF8JeAAA9gwhBtglywR4A8whilA8wwR4B8whg0?BtF8whi0F8JeAAA9gilg0ywR4A8glBtg0A8wwR4B8RpBtF8?Rph0F8JeAAPXAQ1ZOBFrnRASo78A4cVzAVYt2AFr4AA9gzh?ywR4A8h0hlA8wwR4B8g0RpglF8g0RpglF8JeAAPXAQVtRBF?rnRASo78AYbVzAVYt2AFr4AA9gwhilywR4A8whglRpA8wwR?4B8whg0RpF8whi0F8JeAAPXAQVt2AFrnRASo78AYbMzAVYt?2AFr4AA9gh0hlywR4A8g0RpglA8wwR4B8g0RpglF8zhF8Je?AAPXAQFb9AFrnRASo78A45ZzAVYt2AFr4AA9gRpR4BtywA8?RphlA8BtwwB8g0R4glF8i0glF8JeAAPXAQ1IEBFrnRASo78?A45QzAVYt2AFr4AA9gBtRpywR4A8h0RpA8wwR4B8g0BtglF?8g0ilF8JeAAA",
-            
-            notes: "Without 180, the solve percentage drops down to 99.76%"
-        }
-    }
 }
