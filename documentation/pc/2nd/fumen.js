@@ -91,12 +91,29 @@ class Fumen{
 		})
 	}
 
-	load(){
-		this.loaded=true;
-		this.fumen=this.element.getAttribute("fumen")??"v115@vhAAgH"
-		$(this.element).empty()
-		const img = this.fumencanvas(this.fumen);
-		this.element.appendChild(img);
+	load(data=null){
+		if(data){
+			this.loaded=true;
+			this.fumen=this.element.getAttribute("fumen")??"v115@vhAAgH"
+			$(this.element).empty()
+			var img = document.createElement('img');
+			img.src = data
+			img.className = 'imageOutput';
+
+			this.element.appendChild(img)
+
+		}else{
+
+			this.loaded=true;
+			this.fumen=this.element.getAttribute("fumen")??"v115@vhAAgH"
+			$(this.element).empty()
+			var img = document.createElement('img');
+			img.src = getDataURL(this.fumen)
+			img.className = 'imageOutput';
+
+			this.element.appendChild(img)
+		}
+		
 		const copybutton = document.createElement('button');
 		copybutton.id = "copybutton"
 		this.copybutton = copybutton
@@ -138,11 +155,18 @@ class Fumen{
 
 	setFumen(fumen, load = false){
 		this.fumen = fumen;
-		this.element.setAttribute('fumen',fumen)
-		if(decoder.decode(fumen).length<4 || load){
-			this.load();
+		if(this.fumen in fumenData){
+			this.element.setAttribute('fumen',this.fumen)
+			this.load(fumenData[this.fumen])
 		}else{
-			$(this.element).html("load fumen")
+
+
+			this.element.setAttribute('fumen',this.fumen)
+			if(decoder.decode(this.fumen).length<4 || load){
+				this.load();
+			}else{
+				$(this.element).html("load fumen")
+			}
 		}
 	}
 
@@ -188,68 +212,97 @@ class Fumen{
 		this.load();
 	}
 
-	fumencanvas(input) {
 	
-		//	var cellSize = document.getElementById('cellSize').value;
-		
-		var fumenCodes = [];
-		var results = [];
-		var resultURLs = [];
-		const height = this.height;
-		const cellSize = this.cellSize;
-
-	
-		for (let rawInput of input.split('\t')) {
-			fumenCodes.push(...rawInput.split(/\s/));
-		}
-	
-		for (let code of fumenCodes) {
-			try {
-				var pages = decoder.decode(code);
-				if (pages.length == 1) {
-					var canvas = draw(pages[0], 22, height, true);
-					var img = document.createElement('img');
-					var figure = document.createElement('fumen');
-					var	pageComment = pages[0]['comment'];
-					var commentBox = document.createElement('figcaption');
-					var textBox = document.createElement('textarea')
-					textBox.value = pageComment;
-					textBox.style.width = canvas.width + 2;
-					textBox.className = 'commentDisplay';
-	
-					img.src = canvas.toDataURL("image/png");
-					img.className = 'imageOutput';
-	
-					figure.appendChild(img);
-					return img;
-	
-				}
-				if (pages.length > 1) {
-					const gif = drawFumens(pages, cellSize, height, 0, undefined, this.transparency);
-	
-					var binary_gif = gif.stream().getData(); //notice this is different from the as3gif package!
-					var data_url = 'data:image/gif;base64,' + encode64(binary_gif);
-					var img = document.createElement('img');
-					img.style.padding = '0px';
-					img.style.background = 'rgba(203, 199, 255, 0.1);';
-					img.src = data_url;
-					img.style.margin = '1px';
-					return img;
-				}
-			} catch (error) { console.log(code, error); }
-		}
-	}
 
 	
 } 
 
 
 
+function getDataURL(input){
+	var fumenCodes = [];
+	const height = 5
+	const cellSize = 22
+
+
+	for (let rawInput of input.split('\t')) {
+		fumenCodes.push(...rawInput.split(/\s/));
+	}
+
+	for (let code of fumenCodes) {
+		var pages = decoder.decode(code);
+		if (pages.length == 1) {
+			return draw(pages[0], 22, height, true).toDataURL("image/png");
+
+		}
+		if (pages.length > 1) {
+			const gif = drawFumens(pages, cellSize, height, 0, undefined);
+
+			var binary_gif = gif.stream().getData();
+			var data_url = 'data:image/gif;base64,' + encode64(binary_gif);
+			console.log(input, pages.length, data_url)
+
+			return data_url;
+		}
+	}
+}
 
 
 
 
-function draw(fumenPage, tilesize, numrows, transparent) {
+
+
+
+function fumencanvas(input) {
+	
+	//	var cellSize = document.getElementById('cellSize').value;
+	
+	var fumenCodes = [];
+	var results = [];
+	var resultURLs = [];
+	const height = this.height;
+	const cellSize = this.cellSize;
+
+
+	for (let rawInput of input.split('\t')) {
+		fumenCodes.push(...rawInput.split(/\s/));
+	}
+
+	for (let code of fumenCodes) {
+		try {
+			var pages = decoder.decode(code);
+			if (pages.length == 1) {
+				var canvas = draw(pages[0], 22, height, true);
+				var img = document.createElement('img');
+				var figure = document.createElement('fumen');
+				
+				img.src = canvas.toDataURL("image/png");
+				img.className = 'imageOutput';
+
+				figure.appendChild(img);
+				return img;
+
+			}
+			if (pages.length > 1) {
+				const gif = drawFumens(pages, cellSize, height, 0, undefined);
+
+				var binary_gif = gif.stream().getData(); //notice this is different from the as3gif package!
+				var data_url = 'data:image/gif;base64,' + encode64(binary_gif);
+				var img = document.createElement('img');
+				img.style.padding = '0px';
+				img.style.background = 'rgba(203, 199, 255, 0.1);';
+				img.src = data_url;
+				img.style.margin = '1px';
+				return img;
+			}
+		} catch (error) { console.log(code, error); }
+	}
+}
+
+
+
+
+function draw(fumenPage, tilesize, numrows) {
 	var field = fumenPage.field;
 	var operation = fumenPage.operation;
 //	var tilesize = parseFloat(document.getElementById('cellSize').value);
@@ -284,11 +337,7 @@ function draw(fumenPage, tilesize, numrows, transparent) {
 
 	const context = canvas.getContext('2d');
 
-	if (!transparent) {
-		context.fillStyle = document.getElementById('bg').value;
-	} else {
-		context.fillStyle = 'rgba(0, 0, 0, 0)';
-	}
+	context.fillStyle = 'rgba(0, 0, 0, 0)';
 	
 	context.fillRect(0, 0, width, height);
 	
@@ -349,9 +398,7 @@ function drawFumens(fumenPages, tilesize, numrows, start, end, transparent) {
 	encoder.setRepeat(0); // 0 for repeat, -1 for no-repeat
 	encoder.setDelay(delay); // frame delay in ms
 	encoder.setQuality(1); // image quality. 10 is default.
-	if (transparent) {
-		encoder.setTransparent('rgba(0, 0, 0, 0)');
-	}
+	encoder.setTransparent('rgba(0, 0, 0, 0)');
 	for (x = start; x < end; x++) {
 		frame = draw(fumenPages[x], tilesize, numrows, transparent).getContext('2d');
 		encoder.addFrame(frame);
@@ -1779,8 +1826,7 @@ function splitFumen(input) {
             }
         } catch (error) { console.log(code, error); }
     }
-    console.log(results.join(' '));
     return results;
 }
 
-//wow 1555 lines
+//wow 1784 lines

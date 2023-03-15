@@ -1,5 +1,7 @@
 const qbsearch = $("#qbsearch > input");
 
+qbsearch[0].focus();
+
 $("#qb").hide();
 $("#oqb").hide();
 $("#general").hide();
@@ -69,11 +71,16 @@ const url = window.location.search;
 const urlParams = new URLSearchParams(url);
 
 if(urlParams.has("queue")){
-    queue = urlParams.get("queue");
-    queue = queue.toUpperCase();
+    queue = urlParams.get("queue").toUpperCase();
+    localStorage.setItem("queue",queue)
+    window.location.href = window.location.href.split("?")[0]
+
+}else{
+    queue = (localStorage.getItem("queue")??"").toUpperCase()
+
+    localStorage.removeItem("queue")
     if(queue.length==4||queue.length==7){
         if(/^[TIJLOSZ]+$/.test(queue)){
-            console.log(queue)
             qbsearch.val(queue)
             queue = qbsearch.val();
             (function(){
@@ -116,7 +123,6 @@ if(urlParams.has("queue")){
             
         }
     };
-
 }
 
 
@@ -146,7 +152,7 @@ $(document).on("keydown", async function (e) {
 
 
 
-const see = (queue, pieces) => {
+function see(queue, pieces){
     for (const piece of pieces) {
         if (!queue.includes(piece)) {
             return false;
@@ -322,3 +328,37 @@ function processText(str) {
     str = str.replaceAll("\n", "<br>")
     return str;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+var fumenDataUpToDate = true
+for(var queue in qb){
+    for(var setup in qb[queue]){
+        let fumen = qb[queue][setup].fumen
+        let minimals = qb[queue][setup].minimals
+
+        if(!(fumen in fumenData)){
+            fumenData[fumen] = getDataURL(fumen)
+            var fumenDataUpToDate = false
+        }
+        if(!(minimals in fumenData)){
+            fumenData[minimals] = getDataURL(minimals)
+            var fumenDataUpToDate = false
+        }
+    }
+}
+
+if(!fumenDataUpToDate){
+    console.log("AHH!!!")
+    navigator.clipboard.writeText(JSON.stringify(fumenData))
+}
+
