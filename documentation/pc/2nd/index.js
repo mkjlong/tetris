@@ -222,10 +222,12 @@ async function LoadQueueBasedSetups(queue, value) {
         $(fumenDiv).html(processText(name))
         const fumen = new Fumen(document.createElement('fumen'))
         fumen.setFumen(setup.fumen);
+        fumenDiv.classList.add("fumen")
         $(fumenDiv).append(fumen.element);
 
 
         const savesDiv = document.createElement('div');
+        savesDiv.classList.add("saves")
 
         $(savesDiv).html(processText(`Save${Object.keys(setup.saves).length == 1 ? `: {${Object.keys(setup.saves)[0]}}` : 's:'}`))
 
@@ -239,6 +241,7 @@ async function LoadQueueBasedSetups(queue, value) {
         const minimalDiv = document.createElement('div')
         $(minimalDiv).html(decoder.decode(setup.minimals).length == 1 ? 'Solve' : `Minimals (${decoder.decode(setup.minimals).length})`)
 
+        minimalDiv.classList.add("minimals")
         const minimalsfumen = new Fumen(document.createElement('fumen'))
         minimalsfumen.setFumen(setup.minimals);
         if (queue.length == 7) minimalsfumen.load();
@@ -248,7 +251,19 @@ async function LoadQueueBasedSetups(queue, value) {
 
         if (setup.notes) {
             const notesDiv = document.createElement('div')
-            $(notesDiv).html(processText(`Notes:<br><br>${setup.notes}`))
+
+
+            const notesTitle = document.createElement('p')
+            $(notesTitle).html("Notes")
+            notesTitle.classList.add("notesTitle")
+            const notesText = document.createElement('p')
+
+            $(notesText).html(processText(setup.notes));
+            notesText.classList.add("notesText")
+            notesDiv.classList.add("notes")
+
+            $(notesDiv).append(notesTitle,notesText)
+
             $(setupDiv).append(notesDiv);
 
         }
