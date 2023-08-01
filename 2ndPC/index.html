@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description", content="hello">
+    <title>2nd PC setups</title>
+    <script src="fumenData.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="jszip.min.js"></script>
+    <script src="jszip-utils.min.js"></script>
+    <script src="tetris-fumen.js"></script>
+    <script src="fumen.js" defer></script>
+    <script src="index.js" defer></script>
+    <link rel = "stylesheet" href = "index.css">
+</head>
+<body>
+    <div id = "qbsearch">
+        <img src="./assets/magnifying_glass.png"></img>
+        <input type='text' maxlength="4">
+    </div>
+    <div id = search>
+        <div id = group1>
+            <div class = title>
+                <div class = background></div>
+                Has T
+            </div>
+            <div class = setupgrid></div>
+        </div>
+        <div id = group2>
+            <div class = title>
+                <div class = background></div>
+                Odd T, Even JL
+            </div>
+            <div class = setupgrid></div>
+        </div>
+        <div id = group3>
+            <div class = title>
+                <div class = background></div>
+                Odd T, Odd JL
+            </div>
+            <div class = setupgrid></div>
+        </div>
+    </div>
+    <div id="setupfocus" class = hidden>
+        <span id = title></span>
+        <img>
+    </div>
+</body>
+</html>

@@ -1,15 +1,12 @@
-#grid{
+#board{
     /*center grid*/
     position:absolute;
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
+    width:25vw;
+    height:50vw;
 
 
     /*make it a grid*/
-    width:100px;
-    height:200px;
-    display: grid;
-    grid-template-columns: repeat(10,20px);
-    grid-template-rows: repeat(20,20px);
 }
