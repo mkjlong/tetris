@@ -327,7 +327,7 @@ document.onkeydown = document.onkeyup = function(e){
 }
 
 
-focus("TJOS")
+//focus("TJOS")
 
 
 $("img").on("dragstart",function(){
