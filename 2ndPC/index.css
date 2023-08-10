@@ -19,6 +19,7 @@
 body{
 	background-color: #003049;
 	overflow: hidden;
+	user-select: none;
 }
 
 #qbsearch{
@@ -159,6 +160,7 @@ body{
 	margin:5%;
 	width:70%;
 	height:auto;
+	transition: all 0.4s;
 }
 
 .setupgrid > div > img:hover{
@@ -171,6 +173,7 @@ body{
 
 .hidden{
 	display: none !important;
+	opacity: 0;
 }
 
 
@@ -178,51 +181,138 @@ body{
 	display: flex;
 	width:100%;
 	height: 100%;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 
 #title{
-	font-size: 100;
+	font-size: 5vw;
+	font-weight: 900;
 	font-family: feshfont;
 	color:white;
-	text-shadow: -5px -5px 0 black, 5px -5px 0 black, -5px 5px 0 black, 5px 5px 0 black;
+	text-shadow: -0.5vh -0.5vh 0 black, 0.5vh -0.5vh 0 black, -0.5vh 0.5vh 0 black, 0.5vh 0.5vh 0 black;
 }
+
+#subtitle{
+	font-size: 2.5vh;
+	color: white;
+	font-family: feshfont;
+}
+
+
 
 
 #setupfocus > img{
-	aspect-ratio: 2;
 	position: absolute;
-	left:50%;
-	top:30%;
+	aspect-ratio: 2;
 	width:20%;
 	height: auto;
-	transform: translate(-50%,-50%);
-	border: 2px solid #003d5d;
-	border-style: dashed;
-	padding:4px;
+	border-radius: 1vh;
+	padding: 1vh;
+	top:0%;
+	left:0%;
+	background-color: #01283c;
+	
 }
 
 
+
+#setupfocus > #mainsetup{
+	position: relative;
+	margin-top: 2vh;
+	height: 40vh;
+	width: 90%;
+	background-color: #00283D;
+	border-radius: 2vh;
+	text-align: center;
+	color:white;
+	font-family: arcadegamer;
+	font-size: 3vh;
+	padding: 2vh;
+}
+
+#setupfocus > #mainsetup > img{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left:0;
+	margin-left: 5vh;
+	height: 30vh;
+	background-color: #003049;
+	border: 5px solid #00273B;
+	border-radius: 2vh;
+	padding: 1vh;
+
+}
+
+
+#saves{
+	display: grid;
+	aspect-ratio: 2;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right:0;
+	margin-right: 5vh;
+	height: 30vh;
+	background-color: #003049;
+	border: 5px solid #00273B;
+	border-radius: 2vh;
+	padding: 1vh;
+	grid-template-columns: repeat(2,50%);
+}
+
+
+
+
+#rightclick{
+	opacity: 1;
+	position: fixed;
+	width: 150px;
+	background-color: #292a2d;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	box-shadow: #000000 10px;
+}
+#rightclick.hidden{
+	top:-1000px;
+	left:-1000px;
+}
+
+#rightclick > span{
+	padding: 5px;
+	padding-left:20px;
+	font-size:13px;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#rightclick > span:hover{
+	background-color: #3A3C40;
+}
 
 .t{
-	color:magenta
+	color:#b352a9
 }
 .i{
-	color:aqua
+	color:#44afdb
 }
 .j{
 	color:darkblue
 }
 .l{
-	color:orange
+	color:#ee9543
 }
 .o{
-	color:yellow
+	color:#f7d352
 }
 .s{
-	color:greenyellow
+	color:#68c665
 }
 .z{
-	color:red
+	color:#ee6351
 }

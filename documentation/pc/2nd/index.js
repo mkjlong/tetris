@@ -1,0 +1,1 @@
+window.location.href = "https://mkjlong.github.io/tetris/2ndPC/"
